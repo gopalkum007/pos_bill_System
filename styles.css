@@ -1,0 +1,12 @@
+
+
+#mainheading{
+    text-align:center;
+    margin-bottom: 20px;
+    color:black;
+}
+
+.product-group{
+    display: flex;
+    gap: 20px;
+}
