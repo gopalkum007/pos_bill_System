@@ -139,5 +139,12 @@ generateInvoiceBtn.addEventListener("click", ()=>{
         window.alert("Cart is empty. Add items before generating invoice.");
         return;
     }
-    window.print();
+    const printWindow = window.open('', '', 'height=500,width=800');
+    printWindow.document.write('<html><head><title>Invoice</title>');
+    printWindow.document.write('<style>body{font-family:Arial;margin:20px;} .invoice-item{display:flex; justify-content:space-between; margin:10px 0;} .grand-total{font-weight:bold; font-size:18px; border-top:2px solid #000; padding-top:10px;} hr{border:none; border-top:1px solid #000;}</style>');
+    printWindow.document.write('</head><body>');
+    printWindow.document.write(invoicePreview.innerHTML);
+    printWindow.document.write('</body></html>');
+    printWindow.document.close();
+    printWindow.print();
 })
